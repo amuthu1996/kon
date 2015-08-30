@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="ksite.css" rel="stylesheet">
+<link href="fontawesome/css/font-awesome.min.css" rel="stylesheet">
+<!--tab styles -->
+
+  
+<link rel="stylesheet" href="css/tabs/style.css"> <!-- Resource style -->
+<script src="js/tabs/modernizr.js"></script> <!-- Modernizr -->
+    <!--clickfx-->
+     <link rel="stylesheet" type="text/css" href="css/clickfx/component.css" />
+     <link rel="stylesheet" type="text/css" href="css/clickfx/demo.css" />
+
+     <script src="js/tabs/modernizr.custom.js"></script>
+     <script src="js/clickfx/modernizr.custom.js"></script>
+
+
+
+<script src="js/clickfx/classie.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/tabs/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+
+<style>
+body{
+	overflow-x:hidden !important;
+	width:100%;
+	height:100%;
+}
+
+.top,.left,.right{
+	top:0;
+	position:absolute;
+	width:100%;
+	height:auto;
+	margin-top:53px;
+    }
+.left{
+	margin-left:100%;
+
+	}
+.top{
+	margin-top:-100%;
+	}
+.right{
+	margin-left:-100%;
+}
+.top h1, .left h1,.right h1{text-align: center;
+}
+.close{
+	cursor: pointer;
+  color:#fff;
+}
+.close:hover{
+  color:#fff;
+}
+.imagebox{
+  width:100%;
+  height:450px;
+  background:#fff;
+  margin-bottom:20px;
+  cursor: pointer;
+  box-shadow:0px 8px 10px rgba(0,0,0,0.4);
+  -webkit-transition:all 0.5s;
+  -moz-transition:all 0.5s;
+  transition:all 0.5s;
+  color:#333;
+}
+.imagebox p{
+  padding:10px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align:center;
+}
+.imagebox .icon{
+  margin:auto;
+  font-size:35px;
+  display:block;
+
+}
+
+
+.imagebox .title{
+  font-size: 14px;
+	background:#fff;
+	padding:10px;
+	text-align: center;
+	top:0px;
+	position:absolute;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	transition:all 0.5s;
+  width:93%;
+}
+.imagebox .title::after{
+  position:absolute;
+  bottom:-11px;
+  right:0;
+  border-right:12px solid transparent;
+  border-top:12px solid orangered;
+}
+.imagebox img{
+	width:100%;
+	height:200px;
+}
+.imageboxl:hover, .imageboxr:hover{
+  box-shadow:5px 2px 5px rgba(255,255,255,0.06),
+  5px -2px 5px rgba(255,255,255,0.06),
+  -5px 2px 5px rgba(255,255,255,0.06),
+  -5px -2px 5px rgba(255,255,255,0.06);
+}
+
+.boxes{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	padding-bottom:50px;
+  margin-top:20px;
+}
+.pageHeader{
+	position:relative;
+	background:#000;
+	top:30px;
+	width:100%;
+	height:100px;
+	text-align: center;
+	color:#fff;
+	font-family:'Roboto',sans-serif;
+}
+</style>
+<!--navbar-->
+
+<!--navbar-->
+
+<div class="col-md-12 headerBox hidden-xs hidden-sm">
+<div class="col-md-4 ">
+<img src="images/ceg_desc.png" class="headerPics" id="ceg"/>
+</div>
+<div class="col-md-4">
+<img src="images/k.png" class="headerPics" id="k"/>
+</div>
+<div class="col-md-4 col-md-push-3">
+<img src="images/unesco.png" class="headerPics" id="unesco"/>
+</div>
+</div>
+<div class="bg">
+<div class="overlay">
+
+  <nav class="navbar" >
+    <div class="container-fluid paddingReset">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <div class="sr-only">Toggle navigation</div>
+          <div class="icon-bar top-bar"></div>
+          <div class="icon-bar middle-bar"></div>
+          <div class="icon-bar bottom-bar"></div>
+        </button>
+       <!-- <a class="navbar-brand" href="#">
+         <img id="ctf-logo" style="background:url(images/gplay.png); background-color:white;width:" alt="ctf-logo" class="text-center" src="images/k.png">
+         
+       </a> -->
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="width:105% !important">
+         <li>
+          <a class="text">HOME</a>
+          <div class="topVane">
+            <i class="fa fa-home"></i>
+          </div>
+         </li>
+          <li id="eventsNav" class="hidden-xs">
+          <a class="text">EVENTS</a>
+          <div class="topVane">
+            <i class="fa fa-bullhorn"></i>
+          </div>
+         </li>
+         <li class="eventdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <div class="caret"></div></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">Engineering</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <div class="sideText">Robotics</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-laptop"></i>
+                            <div class="sideText">Online</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-terminal"></i>
+                            <div class="sideText">Coding</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-money"></i>
+                            <div class="sideText">Management</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <div class="sideText">General</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-puzzle-piece"></i>
+                            <div class="sideText">Quizzes</div>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li id="wkshopsNav" class='hidden-xs'>
+          <a class="text">WORKSHOPS</a>
+          <div class="topVane">
+            <i class="fa fa-wrench"></i>
+          </div>
+         </li>
+
+         <li class="wkshopdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORKSHOPS <div class="caret"></div></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">Engineering</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <div class="sideText">Robotics</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-inr"></i>
+                            <div class="sideText">Management</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <div class="sideText">General</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-university"></i>
+                            <div class="sideText">School</div>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li>
+          <a class="text">XCEED</a>
+          <div class="topVane">
+            <i class="fa fa-bus"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">SPONSORS</a>
+          <div class="topVane">
+            <i class="fa fa-inr"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text" style="margin-top:-7px">GUEST LECTURES</a>
+          <div class="topVane">
+            <i class="fa fa-microphone"></i>
+          </div>
+         </li>
+
+         <li class="">
+          <a class="text">K!ARNIVAL</a>
+          <div class="topVane">
+            <i class="fa fa-flag"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">HOSPITALITY</a>
+          <div class="topVane">
+            <i class="fa fa-truck"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">ABOUT US</a>
+          <div class="topVane">
+            <i class="fa fa-angellist"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">CONTACT</a>
+          <div class="topVane">
+            <i class="fa fa-comments-o"></i>
+          </div>
+         </li>
+         <li id="loginNav" class="smalleritem hidden-xs">
+          <a class="text">LOGIN</a>
+          <div class="topVane">
+            <i class="fa fa-lock"></i>
+          </div>
+         </li>
+         <li class="logindrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN <div class="caret"></div></a>
+          <ul class="dropdown-menu loginNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">K!</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-facebook"></i>
+                <div class="sideText">FACEBOOK</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-google"></i>
+                <div class="sideText">Google+</div>
+                </a>
+              </li>
+         </ul><!-- 
+         <li class="searchInput">
+            <form>
+            <div class="col-md-2 col-xs-61 text-center">
+              <input type="text" id="searchdata" />
+            </div>
+            <div class="col-md-2 col-xs-6">
+              <a class="submitsearch"><i class="fa fa-search fa-2x fa-fw"></i></a>
+            </div>
+            </form>
+         </li> -->
+       </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ <div class="col-md-12 col-xs-12 eventHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-3">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">Engineering</div>
+            </li>
+           <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-laptop"></i>
+              <div class="btmText">Online</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-terminal"></i>
+              <div class="btmText">Coding</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-binoculars"></i>
+              <div class="btmText">Quizzes</div>
+            </li>
+          </ul>
+</div>
+
+ <div class="col-md-12 col-xs-12 wkshopHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="wkshopCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><i class="fa fa-gear"></i>
+                <div class="btmText">Engineering</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+           
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-university"></i>
+              <div class="btmText">School</div>
+            </li>
+          </ul>
+</div>
+
+<!--login header -->
+<div class="col-md-12 col-xs-12 loginHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">K! Login</div>
+            </li>
+           <li class="eventCircle" style="margin-left:25px"><i class="fa fa-facebook"></i>
+              <div class="btmText">Facebook Login</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-google"></i>
+              <div class="btmText">Google+ Login</div>
+            </li>
+          </ul>
+</div>
+
+<!--image boxes start -->
+<h2 class="ribbontitle text-center">ENGINEERING</h2>
+<div class="container" >
+<div class="bottom col-md-12 col-xs-12 boxes">
+<div class=" col-md-3 col-xs-12">
+	<div class="imagebox imageboxl">
+		<img src="images/patterns/giftly.png"/>
+		<div class="title" style="background:coral">
+			<h5 style="color:#fff">SOLAR PV DESIGN CONTEST</h5>
+    </div>
+    <div class="icon text-center" style="font-size:35px">
+        <i class="fa fa-code"></i>
+      </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  </p>
+	</div>
+</div>
+<div class=" col-md-3 col-xs-12">
+	<div class="imagebox imageboxr">
+		<img src="images/patterns/food.png"/>
+		<div class="title">
+			<h5>PAPER PRESENTATION</h5>
+		</div>
+	</div>
+</div>
+<div class=" col-md-3 col-xs-12">
+	<div class="imagebox imageboxt">
+		<img src="images/patterns/geometry.png"/>
+		<div class="title" style="background:seagreen">
+			<h5 style="color:#fff">MARKETING MADNESS</h5>
+		</div>
+	</div>
+</div>
+<div class=" col-md-3 col-xs-12">
+  <div class="imagebox imageboxl">
+    <img src="images/patterns/giftly.png"/>
+    <div class="title" style="background:coral">
+      <h5 style="color:#fff">MURUGAPPA GROUP'S ROBOWARS</h5>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div><!-- overlay -->
+</div>
+
+<!--navbar ends-->
+<div class="left col-md-12 col-xs-12" style="background:rgba(0,0,0,0.85); padding-bottom:40px">
+  <div class="tabs tabs-style-bar col-md-12 col-xs-12 paddingReset">
+    
+    <div class="cd-tabs">
+    <i class="close fa fa-times fa-2x fa-fw" style="color:#fff;"></i>
+
+      <nav>
+        <ul class="cd-tabs-navigation col-md-12 col-xs-12 clearfix paddingReset">
+          <li><a data-content="inbox" class="selected" href="#0"><i class="fa fa-info tabicon"></i><span>Introduction</span></a></li>
+          <li><a data-content="new" href="#0"><i class="fa fa-puzzle-piece tabicon"></i><span>Problem Statement</span></a></li>
+          <li><a data-content="gallery" href="#0"><i class="fa fa-hourglass-end tabicon"></i><span>Scoring</span></a></li>
+          <li><a data-content="store" href="#0"><i class="fa fa-thumb-tack tabicon"></i><span>Rules</span></a></li>
+          <li><a data-content="settings" href="#0"><i class="fa fa-newspaper-o tabicon"></i><span>Format</span></a></li>
+          <li><a data-content="settings" href="#0"><i class="fa fa-angellist tabicon"></i><span>Organizers</span></a></li>
+        </ul> <!-- cd-tabs-navigation -->
+      </nav>
+<button class="btn btn-danger subscribe"><i class="fa fa-paw"></i> SUBSCRIBE</button>
+
+  <ul class="cd-tabs-content">
+    <li data-content="inbox" class="selected">
+      <p>Inbox Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
+
+      <p>Inbox Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
+    </li>
+
+    <li data-content="new">
+      <p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
+
+      <p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
+    </li>
+
+    <li data-content="gallery">
+      <p>Gallery Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque tenetur aut, cupiditate, libero eius rerum incidunt dolorem quo in officia.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa vero, culpa doloremque voluptatum consectetur mollitia, atque expedita unde excepturi id, molestias maiores delectus quos molestiae. Ab iure provident adipisci eveniet quisquam ratione libero nam inventore error pariatur optio facilis assumenda sint atque cumque, omnis perspiciatis. Maxime minus quam voluptatum provident aliquam voluptatibus vel rerum. Soluta nulla tempora aspernatur maiores! Animi accusamus officiis neque exercitationem dolore ipsum maiores delectus asperiores reprehenderit pariatur placeat, quaerat sed illum optio qui enim odio temporibus, nulla nihil nemo quod dicta consectetur obcaecati vel. Perspiciatis animi corrupti quidem fugit deleniti, atque mollitia labore excepturi ut.</p>
+    </li>
+
+    <li data-content="store">
+      <p>Store Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, enim, pariatur. Ab assumenda, accusantium! Consequatur magni placeat quae eos dicta, cum expedita sunt facilis est impedit possimus dolorum sequi nostrum nobis sit praesentium molestias nulla laudantium fugit corporis nam ut saepe harum ipsam? Debitis accusantium, omnis repudiandae modi, distinctio illo voluptatibus aperiam odio veritatis, quam perferendis eaque ullam. Temporibus tempore ad voluptates explicabo ea sit deleniti ipsum quos dolores tempora odio, ab corporis molestiae, eaque optio, perferendis! Cumque libero quia modi! Totam magni rerum id iusto explicabo distinctio, magnam, labore sed nemo expedita velit quam, perspiciatis non temporibus sit minus voluptatum. Iste, cumque sunt suscipit facere iusto asperiores, ullam dolorum excepturi quidem ea quibusdam deserunt illo. Nesciunt voluptates repellat ipsam.</p>
+    </li>
+
+    <li data-content="settings">
+      <p>Settings Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nam magni, ullam nihil a suscipit, ex blanditiis, adipisci tempore deserunt maiores. Nostrum officia, ratione enim eaque nihil quis ea, officiis iusto repellendus. Animi illo in hic, maxime deserunt unde atque a nesciunt? Non odio quidem deserunt animi quod impedit nam, voluptates eum, voluptate consequuntur sit vel, et exercitationem sint atque dolores libero dolorem accusamus ratione iste tenetur possimus excepturi. Accusamus vero, dignissimos beatae tempore mollitia officia voluptate quam animi vitae.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique ipsam eum reprehenderit minima at sapiente ad ipsum animi doloremque blanditiis unde omnis, velit molestiae voluptas placeat qui provident ab facilis.</p>
+    </li>
+
+    <li data-content="trash">
+      <p>Trash Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque a iure nostrum animi praesentium, numquam quidem, nemo, voluptatem, aspernatur incidunt. Fugiat aspernatur excepturi fugit aut, dicta reprehenderit temporibus, nobis harum consequuntur quo sed, illum.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima doloremque optio tenetur, natus voluptatum error vel dolorem atque perspiciatis aliquam nemo id libero dicta est saepe laudantium provident tempore ipsa, accusamus similique laborum, consequatur quia, aut non maiores. Consectetur minus ipsum aliquam pariatur dolorem rerum laudantium minima perferendis in vero voluptatem suscipit cum labore nemo explicabo, itaque nobis debitis molestias officiis? Impedit corporis voluptates reiciendis deleniti, magnam, fuga eveniet! Velit ipsa quo labore molestias mollitia, quidem, alias nisi architecto dolor aliquid qui commodi tempore deleniti animi repellat delectus hic. Alias obcaecati fuga assumenda nihil aliquid sed vero, modi, voluptatem? Vitae voluptas aperiam nostrum quo harum numquam earum facilis sequi. Labore maxime laboriosam omnis delectus odit harum recusandae sint incidunt, totam iure commodi ducimus similique doloremque! Odio quaerat dolorum, alias nihil quam iure delectus repellendus modi cupiditate dolore atque quasi obcaecati quis magni excepturi vel, non nemo consequatur, mollitia rerum amet in. Nesciunt placeat magni, provident tempora possimus ut doloribus ullam!</p>
+    </li>
+  </ul> <!-- cd-tabs-content -->
+</div> <!-- cd-tabs -->
+
+<form action="http://maps.google.com/maps" method="get" target="_blank">
+   <label for="saddr">Enter your location</label>
+   <input type="text" name="saddr" />
+   <input type="hidden" name="daddr" value="Anna University, Kotturpuram, Chennai, Tamil Nadu, India" />
+   <input type="submit" value="Get directions" />
+</form>
+
+ </div>       
+</div>
+
+<script>
+$(document).ready(function(){
+
+$(".imageboxl").click(function(){
+		$(".left").animate({'marginLeft':"0px"},500,'easeOutSine');
+	
+	});
+
+$(".imageboxt").click(function(){
+		$(".left").animate({'marginLeft':"0px"},1000,'easeOutElastic');
+	});
+
+$(".imageboxr").click(function(){
+		$(".right").animate({'marginLeft':"0px"},1000,'easeOutElastic');
+	});
+$(".close").click(function(){
+	closeall();
+});
+function closeall(){
+		$(".top").animate({'marginTop':"-100%"},1000,'easeOutElastic');
+		$(".left").animate({'marginLeft':"100%"},1000,'easeOutElastic');
+		$(".right").animate({'marginLeft':"-100%"},1000,'easeOutElastic');
+}
+
+$(".navbar-toggle").click(function(){
+	closeall();
+	
+});
+});
+	
+</script>
+<!--navbar script-->
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  $(".top-bar").toggleClass("top-bar-anim");
+  $(".middle-bar").toggleClass("middle-bar-anim");
+  $(".bottom-bar").toggleClass("bottom-bar-anim");
+});
+
+
+if( $(window).width() >= 600)
+{
+  $(".eventHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+  $(".loginHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+
+  $("#eventsNav").hover(function(){
+  $(".eventHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+  $("#loginNav").hover(function(){
+  $(".loginHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+
+  $(".navbar-nav li").hover(function(){
+    if($(this).attr("id") != "eventsNav" )
+  {
+  $(".eventHeader").animate({'opacity':"0"});
+  $(".eventHeader").fadeOut().finish();
+  }
+    if($(this).attr("id") != "wkshopsNav" )
+  {
+  $(".wkshopHeader").animate({'opacity':"0"});
+  $(".wkshopHeader").fadeOut().finish();
+  }
+
+    if($(this).attr("id") != "loginNav" )
+  {
+  $(".loginHeader").animate({'opacity':"0"});
+  $(".loginHeader").fadeOut().finish();
+  }
+  });
+
+  $(".eventHeader").hover(function(){
+  }, function(){
+   $(".eventHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".wkshopHeader").hover(function(){
+  }, function(){
+   $(".wkshopHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".loginHeader").hover(function(){
+  }, function(){
+   $(".loginHeader").animate({'opacity':"0"}).fadeOut();
+  });
+  
+  $(".wkshopHeader").animate({'opacity':"0"}).fadeOut().finish();
+  $("#wkshopsNav").hover(function(){
+    $(".wkshopHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+}
+
+});
+</script>
+    <!--clickfx-->
+    <script>
+      (function() {
+
+        // http://stackoverflow.com/a/11381730/989439
+        function mobilecheck() {
+          var check = false;
+          (function(a){if(/(android|ipad|playbook|silk|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+          return check;
+        }
+
+        var support = { animations : Modernizr.cssanimations },
+          animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
+          animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+          onEndAnimation = function( el, callback ) {
+            var onEndCallbackFn = function( ev ) {
+              if( support.animations ) {
+                if( ev.target != this ) return;
+                this.removeEventListener( animEndEventName, onEndCallbackFn );
+              }
+              if( callback && typeof callback === 'function' ) { callback.call(); }
+            };
+            if( support.animations ) {
+              el.addEventListener( animEndEventName, onEndCallbackFn );
+            }
+            else {
+              onEndCallbackFn();
+            }
+          },
+          eventtype = mobilecheck() ? 'touchstart' : 'click';
+
+        [].slice.call( document.querySelectorAll( '.cbutton' ) ).forEach( function( el ) {
+          el.addEventListener( eventtype, function( ev ) {
+            classie.add( el, 'cbutton--click' );
+            onEndAnimation( classie.has( el, 'cbutton--complex' ) ? el.querySelector( '.cbutton__helper' ) : el, function() {
+              classie.remove( el, 'cbutton--click' );
+            } );
+          } );
+        } );
+
+      })();
+    </script>

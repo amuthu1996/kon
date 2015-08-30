@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="ksite.css" rel="stylesheet">
+<link href="fontawesome/css/font-awesome.min.css" rel="stylesheet">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="kcontacts.css" />
+<script src="toucheffects.js"></script>
+<link rel="stylesheet" type="text/css" href="default.css" />
+<link rel="stylesheet" type="text/css" href="component.css" />
+<script src="modernizr.custom.js"></script>
+<style>
+body{
+  overflow-x:hidden !important;
+  width:100%;
+  height:100%;
+}
+.margin-top-lg{
+  margin-top:50px;
+}
+ul{
+  list-style: none;
+}
+
+
+
+
+.bucketCircle{
+  float: left;
+  display: inline-block;
+  width:150px;
+  height:150px;
+  background:url(images/red_light.jpg);
+  padding:20px;
+  text-align: center;
+  margin:30px;
+  vertical-align: middle;
+  border-radius:50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 10px rgba(255,255,255,0.45),
+              -3px -3px 15px rgba(255,255,255,0.08),
+              3px -3px 15px rgba(255,255,255,0.08),
+              -3px 3px 15px rgba(255,255,255,0.08),
+              3px 3px 15px rgba(255,255,255,0.08);
+-moz-transition:all 0.4s;
+-webkit-transition:all 0.4s;
+ transition:all 0.4s;
+
+}
+
+
+
+
+.bucketCircle .bucketName{
+  margin-top:40%;
+  line-height:1.6;
+  color:#fff;
+  font-weight: 600;
+  font-family: 'Roboto',sans-serif;
+}
+.left{
+  top:0;
+  position:absolute;
+  width:100%;
+  height:auto;
+  margin-top:53px;
+  margin-left:100%;
+    }
+.left h1{
+  text-align: center;
+  }
+.close{
+  cursor: pointer;
+  color:#fff;
+}
+.close:hover{
+  color:#fff;
+}
+.popOut, .popOutFast{
+  -webkit-animation:scaleDown 0.25s ease-in-out forwards;
+  -moz-animation:scaleDown 0.25s ease-in-out forwards;
+  animation:scaleDown 0.25s ease-in-out forwards;
+  visibility: hidden;
+  pointer-events:none;
+  -moz-transition:all 0.4s;
+  -webkit-transition:all 0.4s;
+  transition:all 0.4s;
+}
+.popOutFast{
+  -webkit-animation:scaleDown 0.05s ease-in-out forwards;
+  -moz-animation:scaleDown 0.05s ease-in-out forwards;
+  animation:scaleDown 0.05s ease-in-out forwards;
+  -moz-transition:all 0.1s;
+  -webkit-transition:all 0.1s;
+  transition:all 0.1s;
+  
+}
+@-webkit-keyframes scaleDown{
+  0%{transform:scale(1.1);}
+  7%{transform:scale(1.2);}
+  14%{transform:scale(1);}
+  21%{transform:scale(0.9);}
+  28%{transform:scale(0.8);}
+  35%{transform:scale(0.7);}
+  42%{transform:scale(0.6);}
+  49%{transform:scale(0.5);}
+  56%{transform:scale(0.4);}
+  77%{transform:scale(0.3);}
+  84%{transform:scale(0.2);}
+  91%{transform:scale(0.1);}
+  100%{transform:scale(0);}
+}
+
+@keyframes scaleDown{
+  0%{transform:scale(1.1);}
+  7%{transform:scale(1.2);}
+  14%{transform:scale(1);}
+  21%{transform:scale(0.9);}
+  28%{transform:scale(0.8);}
+  35%{transform:scale(0.7);}
+  42%{transform:scale(0.6);}
+  49%{transform:scale(0.5);}
+  56%{transform:scale(0.4);}
+  77%{transform:scale(0.3);}
+  84%{transform:scale(0.2);}
+  91%{transform:scale(0.1);}
+  100%{transform:scale(0);}
+}
+</style>
+<!--navbar-->
+
+<div class="col-md-12 headerBox hidden-xs hidden-sm">
+<div class="col-md-4 ">
+<img src="images/ceg_desc.png" class="headerPics" id="ceg"/>
+</div>
+<div class="col-md-4">
+<img src="images/k.png" class="headerPics" id="k"/>
+</div>
+<div class="col-md-4 col-md-push-3">
+<img src="images/unesco.png" class="headerPics" id="unesco"/>
+</div>
+</div>
+<div class="bg">
+<div class="overlay">
+
+  <nav class="navbar" >
+    <div class="container-fluid paddingReset">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <div class="sr-only">Toggle navigation</div>
+          <div class="icon-bar top-bar"></div>
+          <div class="icon-bar middle-bar"></div>
+          <div class="icon-bar bottom-bar"></div>
+        </button>
+       <!-- <a class="navbar-brand" href="#">
+         <img id="ctf-logo" style="background:url(images/gplay.png); background-color:white;width:" alt="ctf-logo" class="text-center" src="images/k.png">
+         
+       </a> -->
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="width:105% !important">
+         <li>
+          <a class="text">HOME</a>
+          <div class="topVane">
+            <i class="fa fa-home"></i>
+          </div>
+         </li>
+          <li id="eventsNav" class="hidden-xs">
+          <a class="text">EVENTS</a>
+          <div class="topVane">
+            <i class="fa fa-bullhorn"></i>
+          </div>
+         </li>
+         <li class="eventdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <div class="caret"></div></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">Engineering</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <div class="sideText">Robotics</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-laptop"></i>
+                            <div class="sideText">Online</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-terminal"></i>
+                            <div class="sideText">Coding</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-money"></i>
+                            <div class="sideText">Management</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <div class="sideText">General</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-puzzle-piece"></i>
+                            <div class="sideText">Quizzes</div>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li id="wkshopsNav" class='hidden-xs'>
+          <a class="text">WORKSHOPS</a>
+          <div class="topVane">
+            <i class="fa fa-wrench"></i>
+          </div>
+         </li>
+
+         <li class="wkshopdrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORKSHOPS <div class="caret"></div></a>
+          <ul class="dropdown-menu eventsNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">Engineering</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-android"></i>
+                            <div class="sideText">Robotics</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-inr"></i>
+                            <div class="sideText">Management</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-archive"></i>
+                            <div class="sideText">General</div>
+                            </a>
+                          </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-university"></i>
+                            <div class="sideText">School</div>
+            </a>
+                          </li>
+          </ul>
+        </li>
+         <li>
+          <a class="text">XCEED</a>
+          <div class="topVane">
+            <i class="fa fa-bus"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">SPONSORS</a>
+          <div class="topVane">
+            <i class="fa fa-inr"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text" style="margin-top:-7px">GUEST LECTURES</a>
+          <div class="topVane">
+            <i class="fa fa-microphone"></i>
+          </div>
+         </li>
+
+         <li class="">
+          <a class="text">K!ARNIVAL</a>
+          <div class="topVane">
+            <i class="fa fa-flag"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">HOSPITALITY</a>
+          <div class="topVane">
+            <i class="fa fa-truck"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">ABOUT US</a>
+          <div class="topVane">
+            <i class="fa fa-angellist"></i>
+          </div>
+         </li>
+         <li class="">
+          <a class="text">CONTACT</a>
+          <div class="topVane">
+            <i class="fa fa-comments-o"></i>
+          </div>
+         </li>
+         <li id="loginNav" class="smalleritem hidden-xs">
+          <a class="text">LOGIN</a>
+          <div class="topVane">
+            <i class="fa fa-lock"></i>
+          </div>
+         </li>
+         <li class="logindrop dropdown hidden-md hidden-lg hidden-sm">
+          <a href="#" class="text dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN <div class="caret"></div></a>
+          <ul class="dropdown-menu loginNavElem">
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-gear"></i>
+                <div class="sideText">K!</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-facebook"></i>
+                <div class="sideText">FACEBOOK</div>
+                </a>
+              </li>
+            <li class="eventCircleNav"><a href="#"><i class="fa fa-google"></i>
+                <div class="sideText">Google+</div>
+                </a>
+              </li>
+         </ul><!-- 
+         <li class="searchInput">
+            <form>
+            <div class="col-md-4 col-xs-61 text-center">
+              <input type="text" id="searchdata" />
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <a class="submitsearch"><i class="fa fa-search fa-2x fa-fw"></i></a>
+            </div>
+            </form>
+         </li> -->
+       </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ <div class="col-md-12 col-xs-12 eventHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-3">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">Engineering</div>
+            </li>
+           <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-laptop"></i>
+              <div class="btmText">Online</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-terminal"></i>
+              <div class="btmText">Coding</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-binoculars"></i>
+              <div class="btmText">Quizzes</div>
+            </li>
+          </ul>
+</div>
+
+ <div class="col-md-12 col-xs-12 wkshopHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="wkshopCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><i class="fa fa-gear"></i>
+                <div class="btmText">Engineering</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-archive"></i>
+              <div class="btmText">General</div>
+            </li>
+           
+            <li class="eventCircle"><i class="fa fa-android"></i>
+              <div class="btmText">Robotics</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-money"></i>
+              <div class="btmText">Management</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-university"></i>
+              <div class="btmText">School</div>
+            </li>
+          </ul>
+</div>
+
+<!--login header -->
+<div class="col-md-12 col-xs-12 loginHeader" style="background:url(images/patterns/sativa.png)">
+ <ul class="eventCats col-md-12 col-xs-12 col-md-push-4">
+            <li class="eventCircle"><a href="slide-section.html"><i class="fa fa-gear"></i></a>
+                <div class="btmText">K! Login</div>
+            </li>
+           <li class="eventCircle" style="margin-left:25px"><i class="fa fa-facebook"></i>
+              <div class="btmText">Facebook Login</div>
+            </li>
+            <li class="eventCircle"><i class="fa fa-google"></i>
+              <div class="btmText">Google+ Login</div>
+            </li>
+          </ul>
+</div>
+
+<!--put components here -->
+<div class="col-md-12 col-xs-12 topMargin">
+<ul class="container col-md-12 col-xs-12 clearfix paddingReset bucketContainer">
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i1">
+      <h5 class="bucketName">INDUSTRY RELATIONS </h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i2">
+      <h5 class="bucketName">EVENTS</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i3">
+      <h5 class="bucketName">GUEST LECTURES</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i4">
+      <h5 class="bucketName">XCEED</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i5">
+      <h5 class="bucketName">KARNIVAL</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i6">
+      <h5 class="bucketName">WORKSHOPS</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i7">
+      <h5 class="bucketName">HOSPITALITY</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i8">
+      <h5 class="bucketName">LOGISTICS</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i9">
+      <h5 class="bucketName">MEDIA</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i10">
+      <h5 class="bucketName">CREATIVITY</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i11">
+      <h5 class="bucketName">DESIGN</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i12">
+      <h5 class="bucketName">TECH</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i13">
+      <h5 class="bucketName">PROJECTS</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i14">
+      <h5 class="bucketName">HR</h5>
+    </div>
+  </li>
+
+  <li class="bucketBox">
+    <div class="bucketCircle col-md-4 col-xs-6 i15">
+      <h5 class="bucketName">FINANCE</h5>
+    </div>
+  </li>
+</ul>
+</div>
+
+<div class="left col-md-12 col-xs-12" style="background:rgba(0,0,0,0.85); padding-bottom:40px">
+  <div class="desc margin-top-lg">
+      <i class="close fa fa-times fa-2x fa-fw" style="color:#fff;"></i>
+      
+
+      
+  </div>
+
+  <div>
+        <ul class="grid cs-style-3">
+          <li>
+            <figure>
+              <img class="imgSize" src="http://nicenicejpg.com/600" alt="img05">
+              <figcaption>
+                <h3>Sudar</h3>
+                +91 8939303260
+                creativity@kurukshetra.org.in
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img class="imgSize" src="http://nicenicejpg.com/600" alt="img06">
+              <figcaption>
+                <h3>Halidha</h3>
+                +91 9176483730
+                creativity@kurukshetra.org.in
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+</div>
+
+
+</div>
+
+</div><!-- overlay -->
+
+
+</div>
+
+<!--navbar ends-->
+
+
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  closeall();
+  
+});
+
+$(".bucketCircle").click(function(){
+    
+    popOut($(this));
+    $(".left").delay(800).animate({'marginLeft':"0px"},800,'easeOutSine');
+  });
+$(".close").click(function(){
+  closeall();
+});
+
+function popOut(thisele){
+  $(thisele).addClass("popOutFast");
+  $(".bucketCircle").each(function(i){
+      var ele = $(this);
+      setTimeout(function(){ if(!$(ele).hasClass("popOut")) $(ele).addClass("popOut"); }, i*75);
+  });
+$("html,body").delay(800).animate({'scrollTop':"20px"},1000);
+}
+function popIn(){
+
+  $(".bucketCircle").each(function(i){
+      var ele = $(this);
+      setTimeout(function(){ $(ele).removeClass("popOut").removeClass("popOutFast");
+       }, i*70);
+  });
+}
+
+function closeall(){
+    $(".left").animate({'marginLeft':"100%"},1000,'easeOutElastic');
+    popIn();
+}
+
+
+});
+  
+</script>
+
+<!--navbar script-->
+<script>
+$(document).ready(function(){
+$(".navbar-toggle").click(function(){
+  $(".top-bar").toggleClass("top-bar-anim");
+  $(".middle-bar").toggleClass("middle-bar-anim");
+  $(".bottom-bar").toggleClass("bottom-bar-anim");
+});
+
+
+if( $(window).width() >= 600)
+{
+  $(".eventHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+  $(".loginHeader").animate({'opacity':"0"},1000,'easeOutElastic').fadeOut();
+
+  $("#eventsNav").hover(function(){
+  $(".eventHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+  $("#loginNav").hover(function(){
+  $(".loginHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+
+  $(".navbar-nav li").hover(function(){
+    if($(this).attr("id") != "eventsNav" )
+  {
+  $(".eventHeader").animate({'opacity':"0"});
+  $(".eventHeader").fadeOut().finish();
+  }
+    if($(this).attr("id") != "wkshopsNav" )
+  {
+  $(".wkshopHeader").animate({'opacity':"0"});
+  $(".wkshopHeader").fadeOut().finish();
+  }
+
+    if($(this).attr("id") != "loginNav" )
+  {
+  $(".loginHeader").animate({'opacity':"0"});
+  $(".loginHeader").fadeOut().finish();
+  }
+  });
+
+  $(".eventHeader").hover(function(){
+  }, function(){
+   $(".eventHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".wkshopHeader").hover(function(){
+  }, function(){
+   $(".wkshopHeader").animate({'opacity':"0"}).fadeOut();
+  });
+
+  $(".loginHeader").hover(function(){
+  }, function(){
+   $(".loginHeader").animate({'opacity':"0"}).fadeOut();
+  });
+  
+  $(".wkshopHeader").animate({'opacity':"0"}).fadeOut().finish();
+  $("#wkshopsNav").hover(function(){
+    $(".wkshopHeader").animate({'opacity':"1"},100,'easeOutElastic').fadeIn();
+  });
+}
+
+});
+</script>
